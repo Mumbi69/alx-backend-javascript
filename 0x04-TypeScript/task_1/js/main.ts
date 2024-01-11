@@ -7,6 +7,10 @@ interface Teacher {
   [key: string]: any;
 }
 
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
 class TeacherClass implements Teacher {
   readonly firstName: string;
   readonly lastName: string;
