@@ -20,6 +20,29 @@ const printTeacher: printTeacherFunction = (firstName, lastName) => {
   return `${firstLetter}. ${lastName}`;
 };
 
+interface StudentInterface {
+  firstName: string;
+  lastName: string;
+}
+
+class StudentClass implements StudentInterface {
+  firstName: string;
+  lastName: string;
+
+  constructor(data: StudentInterface) {
+    this.firstName = data.firstName;
+    this.lastName = data.lastName;
+  }
+
+  workOnHomework(): string {
+    return "Currently working";
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
 class TeacherClass implements Teacher {
   readonly firstName: string;
   readonly lastName: string;
