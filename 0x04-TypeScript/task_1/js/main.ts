@@ -11,6 +11,15 @@ interface Directors extends Teacher {
   numberOfReports: number;
 }
 
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  const firstLetter = firstName.charAt(0);
+  return `${firstLetter}. ${lastName}`;
+};
+
 class TeacherClass implements Teacher {
   readonly firstName: string;
   readonly lastName: string;
